@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <DataGrid x:Name="dataGrid" Margin="10,46,10,10" CanUserAddRows="true"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <DataGrid x:Name="dataGrid" Margin="10,46,10,10" SelectionUnit="Cell" SelectionMode="Single" IsManipulationEnabled="True"/>
+        <Button x:Name="button" Content="Update" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button1" Content="Add" HorizontalAlignment="Left" Margin="103,21,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
     </Grid>
 </Window>

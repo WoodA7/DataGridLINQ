@@ -44,5 +44,9 @@ namespace DataGridLINQ
                 };
             dataGrid.ItemsSource = res;
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
