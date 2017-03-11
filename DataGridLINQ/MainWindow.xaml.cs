@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Configuration;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -23,6 +25,24 @@ namespace DataGridLINQ
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            var constr = ConfigurationManager.ConnectionStrings["connstr"].ToString();
+            var db = new StepDataContext(constr);
+            var res = from t in db.Tickets
+                select new
+                {
+                    t.FirstName,
+                    t.SecondName,
+                    SrcName = t.City.Name,
+                    DestName = t.City1.Name,
+                    t.Date1,
+                    t.Date2,
+                    t.Class
+                };
+            dataGrid.ItemsSource = res;
         }
     }
 }
